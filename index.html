@@ -1,0 +1,293 @@
+Skip to content
+prakash-ydv
+/
+color-game
+
+Type / to search
+
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+Settings
+Commit
+Add files via upload
+ main
+@prakash-ydv
+prakash-ydv committed now 
+1 parent da88dbe
+commit 2e5de22
+ 
+Showing 4 changed files with 234 additions and 0 deletions.
+Filter changed files
+ Binary file addedBIN +1.32 MB 
+COLOR GAME/Assets/bgm-1.mp3
+Binary file not shown.
+ 57 changes: 57 additions & 0 deletions57  
+COLOR GAME/index.html
+@@ -0,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+    <audio autoplay src="Assets/bgm-1.mp3"autoplay></audio>
+
+    <div id="mainDiv">
+
+        <div id="container">
+            <div id="nav">
+                <div class="elem">
+                    <h4>SCORE</h4>
+                    <div class="box">
+                        <p>0</p>
+
+                    </div>
+                </div>
+
+                <div class="elem">
+                    <h4>TIMER</h4>
+                    <div class="box">
+                        <p id="tmr">60</p>
+
+                    </div>
+                </div>
+            </div>
+
+            <div id="cName">
+                <p>BLUE</p>
+            </div>
+
+            <div class="options">
+                <button id="btn1"><h5>YELLOW</h5></button>
+                <button id="btn2"><h5>BLUE</h5></button>
+                <br>
+                <button id="btn3"><h5>GREEN</h5></button>
+                <button id="btn4"><h5>RED</h5></button>
+            </div>
+
+        </div>
+
+    </div>
+
+
+   <script src="script.js"></script>
+
+</body>
+
+</html>
+ 16 changes: 16 additions & 0 deletions16  
+COLOR GAME/script.js
+@@ -0,0 +1,16 @@
+
+var timer = 60;
+var score = 0;
+function Timer() {
+    var interVal = setInterval(function() {
+        if(timer>0){
+            timer--;
+             document.querySelector("#tmr").textContent = timer;
+        } else{
+            clearInterval(interVal);
+        }
+    }, 1000);
+
+}
+
+Timer();
+ 161 changes: 161 additions & 0 deletions161  
+COLOR GAME/style.css
+@@ -0,0 +1,161 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body html {
+    height: auto;
+    width: auto;
+}
+
+
+#mainDiv {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(225, 171, 237);
+}
+
+#container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 70vh;
+    width: 50vw;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#nav {
+
+    padding: 5px 0;
+    width: 100%;
+    height: 8.5vh;
+    background-color: rgb(142, 69, 158);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16%;
+    font-size: 2vw;
+
+}
+
+.elem {
+    display: flex;
+    cursor: default;
+}
+
+.elem h4 {
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1em;
+    padding-right: 20px;
+
+}
+
+.box {
+    padding-top: px;
+    height: 1em;
+    width: 1.5em;
+    border-radius: 8px;
+    background-color: white;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.elem .box p {
+    font-size: 1 em;
+    font-family: fantasy;
+    font-weight: 200;
+    color: rgb(64, 64, 64);
+
+}
+
+#cName{
+    padding: 2vw;
+    cursor: default;
+    height: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+     font-size: 4vw;
+   font-weight: 300;
+}
+
+button{
+    border: none;
+    background-color: white;
+    border: 0.1px solid black;
+    border-radius: 35px;
+    height: 5vw;
+    width: 18vw;
+    margin: 1.5vw;
+    cursor: pointer;
+}
+
+.options h5{
+    font-size: 3vw ;
+    font-weight: 650;
+}
+
+.options #btn1{
+    color: red;
+}
+.options #btn2{
+    color: yellow;
+}
+.options #btn3{
+    color: orange;
+}
+
+.options #btn4{
+    color: blue;
+}
+
+
+@media (max-width:850px) {
+    #container {
+        height: 60vh;
+        width: 80vw;
+
+    }
+
+    #nav {
+        font-size: 2vh;
+    }
+
+    .box {
+        height: 1.5em;
+        width: 2em;
+    }
+
+    .elem .box p {
+        font-size: 1.2 em;
+
+    }
+
+    #cName{
+        margin-top: 25px;
+        font-size: 7vw;
+        font-weight: 800;
+    }
+
+    button{
+        border-radius: 35px;
+        height: 15vw;
+        width: 28vw;
+        margin: 2vw;
+        cursor: default;
+    }
+
+    .options h5{
+        font-size: 5vw ;
+        font-weight: 650;
+    }
+
+}
+0 comments on commit 2e5de22
+@prakash-ydv
+ 
+Leave a comment
+No file chosen
+Attach files by dragging & dropping, selecting or pasting them.
+Footer
+© 2023 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+Add files via upload · prakash-ydv/color-game@2e5de22
